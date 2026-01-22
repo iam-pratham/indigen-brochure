@@ -3,7 +3,7 @@ import { ArrowRight, Mail, MapPin, Globe } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="py-12 px-8 md:px-12 bg-background border-t border-slate-300">
+        <footer className="pt-12 pb-4 px-8 md:px-12 bg-background border-t border-slate-300">
             <div className="max-w-6xl mx-auto text-center space-y-8">
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
                     Let’s Build Your <br /> Next-Gen Digital Solution.

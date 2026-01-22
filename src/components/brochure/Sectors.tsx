@@ -17,9 +17,9 @@ export default function Sectors() {
         <section className="py-20 px-8 md:px-12 bg-background border-t border-slate-300">
             <div className="max-w-7xl mx-auto space-y-12">
                 <h2 className="text-3xl font-bold text-center">Sectors We Serve</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                     {sectors.map((sector, i) => (
-                        <div key={i} className="flex flex-col items-center justify-center p-6 bg-muted/30 rounded-xl border border-slate-200 hover:bg-muted/60 transition-colors text-center gap-3 group">
+                        <div key={i} className="flex flex-col items-center justify-center p-6 bg-muted/30 rounded-xl border border-slate-200 hover:bg-muted/60 transition-colors text-center gap-3 group w-[180px] sm:w-[200px]">
                             <sector.icon className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors" />
                             <span className="font-medium text-sm sm:text-base">{sector.name}</span>
                         </div>

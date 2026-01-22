@@ -8,20 +8,27 @@ import {
     PolarRadiusAxis,
     ResponsiveContainer,
     Tooltip,
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    CartesianGrid
+    PieChart,
+    Pie,
+    Label,
+    Legend
 } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-const wasteData = [
-    { name: "Reporting & Analytics", value: 100, fill: "hsl(var(--primary))" },
-    { name: "Customer Support (L1)", value: 80, fill: "hsl(var(--primary)/0.8)" },
-    { name: "Data Entry/Migration", value: 60, fill: "hsl(var(--primary)/0.6)" },
-    { name: "Scheduling & Follow-ups", value: 40, fill: "hsl(var(--primary)/0.4)" },
-    { name: "Internal Coordination", value: 20, fill: "hsl(var(--primary)/0.2)" },
+const wasteDataRadar = [
+    { subject: "Reporting", A: 100, fullMark: 100 },
+    { subject: "Support", A: 80, fullMark: 100 },
+    { subject: "Data Entry", A: 60, fullMark: 100 },
+    { subject: "Scheduling", A: 40, fullMark: 100 },
+    { subject: "Coordination", A: 20, fullMark: 100 },
+]
+
+const wasteDataPie = [
+    { name: "Reporting", value: 35, fill: "hsl(var(--primary))" },
+    { name: "Support", value: 25, fill: "hsl(var(--primary)/0.8)" },
+    { name: "Data Entry", value: 20, fill: "hsl(var(--primary)/0.6)" },
+    { name: "Scheduling", value: 15, fill: "hsl(var(--primary)/0.4)" },
+    { name: "Coordination", value: 5, fill: "hsl(var(--primary)/0.2)" },
 ]
 
 const impactData = [
@@ -37,37 +44,58 @@ export default function Graphs() {
     return (
         <section className="py-20 px-8 md:px-12 bg-background">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
-                {/* Horizontal Bar Chart - Visualizing Waste */}
+                {/* Donut Chart - Visualizing Waste */}
                 <Card className="bg-muted/10 border-slate-300">
                     <CardHeader>
                         <CardTitle>Where Businesses Lose Efficiency</CardTitle>
-                        <CardDescription>Percentage of time wasted on manual execution.</CardDescription>
+                        <CardDescription>Breakdown of manual time expenditure.</CardDescription>
                     </CardHeader>
-                    <CardContent className="flex justify-center">
-                        <div className="h-[350px] w-full max-w-[500px]">
+                    <CardContent className="flex flex-col items-center">
+                        <div className="h-[300px] w-full max-w-[500px]">
                             <ResponsiveContainer width="100%" height="100%">
-                                <BarChart
-                                    data={wasteData}
-                                    layout="vertical"
-                                    margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
-                                >
-                                    <CartesianGrid strokeDasharray="3 3" horizontal={false} strokeOpacity={0.3} />
-                                    <XAxis type="number" hide />
-                                    <YAxis
-                                        dataKey="name"
-                                        type="category"
-                                        width={160}
-                                        tick={{ fill: 'hsl(var(--foreground))', fontSize: 13, fontWeight: 500 }}
-                                        axisLine={false}
-                                        tickLine={false}
-                                    />
+                                <PieChart>
+                                    <Pie
+                                        data={wasteDataPie}
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={80}
+                                        outerRadius={110}
+                                        paddingAngle={2}
+                                        dataKey="value"
+                                        stroke="none"
+                                    >
+                                        <Label
+                                            value="Manual Work"
+                                            position="center"
+                                            fill="hsl(var(--foreground))"
+                                            style={{
+                                                fontSize: '18px',
+                                                fontWeight: 'bold',
+                                                fontFamily: 'var(--font-geist-sans)',
+                                            }}
+                                        />
+                                    </Pie>
                                     <Tooltip
-                                        cursor={{ fill: 'hsl(var(--muted)/0.2)' }}
                                         contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }}
                                     />
-                                    <Bar dataKey="value" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} barSize={28} />
-                                </BarChart>
+                                    <Legend
+                                        verticalAlign="bottom"
+                                        height={36}
+                                        iconType="circle"
+                                        formatter={(value) => <span className="text-foreground/80 font-medium ml-1">{value}</span>}
+                                    />
+                                </PieChart>
                             </ResponsiveContainer>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 mt-12 pt-6 border-t border-slate-200/60 w-full max-w-[400px]">
+                            <div className="text-center">
+                                <div className="text-xl md:text-2xl font-bold text-slate-700">60%</div>
+                                <div className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-muted-foreground mt-1">Time Wasted</div>
+                            </div>
+                            <div className="text-center border-l border-slate-200/60">
+                                <div className="text-xl md:text-2xl font-bold text-slate-700">40%+</div>
+                                <div className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-muted-foreground mt-1">Resource Drain</div>
+                            </div>
                         </div>
                     </CardContent>
                 </Card>
@@ -78,8 +106,8 @@ export default function Graphs() {
                         <CardTitle>The Indigen Impact</CardTitle>
                         <CardDescription>Holistic improvement across key business metrics.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <div className="h-[350px] w-full">
+                    <CardContent className="flex flex-col items-center">
+                        <div className="h-[300px] w-full">
                             <ResponsiveContainer width="100%" height="100%">
                                 <RadarChart cx="50%" cy="50%" outerRadius="70%" data={impactData}>
                                     <PolarGrid stroke="hsl(var(--muted-foreground)/0.2)" />
@@ -98,6 +126,20 @@ export default function Graphs() {
                                     />
                                 </RadarChart>
                             </ResponsiveContainer>
+                        </div>
+                        <div className="grid grid-cols-3 gap-4 mt-12 pt-6 border-t border-slate-200/60 w-full">
+                            <div className="text-center">
+                                <div className="text-xl md:text-2xl font-bold text-slate-700">3x</div>
+                                <div className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-muted-foreground mt-1">Faster Delivery</div>
+                            </div>
+                            <div className="text-center border-l border-slate-200/60">
+                                <div className="text-xl md:text-2xl font-bold text-slate-700">40%</div>
+                                <div className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-muted-foreground mt-1">Cost Reduction</div>
+                            </div>
+                            <div className="text-center border-l border-slate-200/60">
+                                <div className="text-xl md:text-2xl font-bold text-slate-700">99%</div>
+                                <div className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-muted-foreground mt-1">System Uptime</div>
+                            </div>
                         </div>
                     </CardContent>
                 </Card>
