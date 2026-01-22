@@ -3,10 +3,10 @@ import { MoveRight } from "lucide-react";
 
 export default function Header() {
     return (
-        <div className="relative w-full overflow-hidden bg-background text-foreground py-20 px-6 sm:px-12 md:px-24 border-b border-slate-300">
+        <div className="relative w-full overflow-hidden bg-background text-foreground py-20 px-8 md:px-12 border-b border-slate-300">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-100/40 via-background to-background pointer-events-none" />
 
-            <div className="relative z-10 max-w-5xl mx-auto flex flex-col gap-8">
+            <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-8">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">INDIGEN SERVICES</h1>
                     <p className="text-xl md:text-2xl text-muted-foreground font-light">

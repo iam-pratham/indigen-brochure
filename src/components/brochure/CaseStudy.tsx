@@ -4,11 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function CaseStudy() {
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <section className="py-20 px-8 md:px-12 bg-primary text-primary-foreground relative overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.1),_transparent)] pointer-events-none" />
 
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <Badge className="bg-white/20 hover:bg-white/30 text-white border-none backdrop-blur-md">Success Story</Badge>

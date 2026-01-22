@@ -13,8 +13,8 @@ export default function GeoSeo() {
     ];
 
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-gradient-to-b from-background to-indigo-50/50">
-            <div className="max-w-5xl mx-auto">
+        <section className="py-20 px-8 md:px-12 bg-gradient-to-b from-background to-indigo-50/50">
+            <div className="max-w-7xl mx-auto">
                 <div className="bg-card border border-slate-300 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
                     {/* Background decoration */}
                     <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none" />

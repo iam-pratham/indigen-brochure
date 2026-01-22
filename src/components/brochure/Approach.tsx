@@ -9,8 +9,8 @@ export default function Approach() {
     ];
 
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-muted/10">
-            <div className="max-w-4xl mx-auto">
+        <section className="py-20 px-8 md:px-12 bg-muted/10">
+            <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach</h2>
                     <p className="text-muted-foreground">From idea to scale in 6 proven steps.</p>

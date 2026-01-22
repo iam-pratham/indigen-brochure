@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function About() {
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-background">
-            <div className="max-w-5xl mx-auto space-y-16">
+        <section className="py-20 px-8 md:px-12 bg-background">
+            <div className="max-w-7xl mx-auto space-y-16">
 
                 {/* Main About Text */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">

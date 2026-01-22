@@ -11,8 +11,8 @@ export default function WhyChoose() {
     ];
 
     return (
-        <section className="py-20 px-6 bg-background">
-            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <section className="py-20 px-8 md:px-12 bg-background">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="text-4xl font-bold mb-6">Why Choose Indigen?</h2>
                     <p className="text-muted-foreground mb-8">

@@ -20,8 +20,8 @@ const impactData = [
 
 export default function Graphs() {
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-background">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+        <section className="py-20 px-8 md:px-12 bg-background">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
                 {/* Bar Chart */}
                 <Card className="bg-muted/10 border-slate-300">
                     <CardHeader>

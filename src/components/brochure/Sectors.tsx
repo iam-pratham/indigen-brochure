@@ -14,8 +14,8 @@ export default function Sectors() {
     ];
 
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-background border-t border-slate-300">
-            <div className="max-w-5xl mx-auto space-y-12">
+        <section className="py-20 px-8 md:px-12 bg-background border-t border-slate-300">
+            <div className="max-w-7xl mx-auto space-y-12">
                 <h2 className="text-3xl font-bold text-center">Sectors We Serve</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {sectors.map((sector, i) => (

@@ -7,8 +7,8 @@ export default function TechStack() {
     ];
 
     return (
-        <section className="py-20 px-6 sm:px-12 md:px-24 bg-muted/10">
-            <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">
+        <section className="py-20 px-8 md:px-12 bg-muted/10">
+            <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
                 <h2 className="text-2xl font-bold uppercase tracking-widest text-muted-foreground">Technology We Use</h2>
                 <div className="flex flex-wrap justify-center gap-3">
                     {stack.map((tech, i) => (
