@@ -1,86 +1,102 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import {
+    Radar,
+    RadarChart,
+    PolarGrid,
+    PolarAngleAxis,
+    PolarRadiusAxis,
+    ResponsiveContainer,
+    Tooltip,
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid
+} from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const wasteData = [
-    { name: "Reporting", value: 85 },
-    { name: "Support", value: 75 },
-    { name: "Data Entry", value: 60 },
-    { name: "Follow-ups", value: 50 },
-    { name: "Coordination", value: 40 },
+    { name: "Reporting & Analytics", value: 100, fill: "hsl(var(--primary))" },
+    { name: "Customer Support (L1)", value: 80, fill: "hsl(var(--primary)/0.8)" },
+    { name: "Data Entry/Migration", value: 60, fill: "hsl(var(--primary)/0.6)" },
+    { name: "Scheduling & Follow-ups", value: 40, fill: "hsl(var(--primary)/0.4)" },
+    { name: "Internal Coordination", value: 20, fill: "hsl(var(--primary)/0.2)" },
 ]
 
 const impactData = [
-    { name: "Automation & AI", value: 40, color: "hsl(var(--chart-1))" },
-    { name: "SaaS Platforms", value: 30, color: "hsl(var(--chart-2))" },
-    { name: "Web & Mobile", value: 20, color: "hsl(var(--chart-3))" },
-    { name: "Growth (SEO/GEO)", value: 10, color: "hsl(var(--chart-4))" },
+    { subject: "Automation", A: 120, fullMark: 150 },
+    { subject: "Efficiency", A: 98, fullMark: 150 },
+    { subject: "Scalability", A: 130, fullMark: 150 },
+    { subject: "Security", A: 99, fullMark: 150 },
+    { subject: "Innovation", A: 110, fullMark: 150 },
+    { subject: "Revenue", A: 125, fullMark: 150 },
 ]
 
 export default function Graphs() {
     return (
         <section className="py-20 px-8 md:px-12 bg-background">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
-                {/* Bar Chart */}
+                {/* Horizontal Bar Chart - Visualizing Waste */}
                 <Card className="bg-muted/10 border-slate-300">
                     <CardHeader>
-                        <CardTitle>Where Businesses Waste Time</CardTitle>
-                        <CardDescription>Manual tasks that slow down growth</CardDescription>
+                        <CardTitle>Where Businesses Lose Efficiency</CardTitle>
+                        <CardDescription>Percentage of time wasted on manual execution.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <div className="h-[300px] w-full">
+                    <CardContent className="flex justify-center">
+                        <div className="h-[350px] w-full max-w-[500px]">
                             <ResponsiveContainer width="100%" height="100%">
-                                <BarChart data={wasteData} layout="vertical" margin={{ left: 0, right: 20 }}>
-                                    <CartesianGrid horizontal={false} stroke="hsl(var(--muted-foreground))" strokeOpacity={0.1} />
+                                <BarChart
+                                    data={wasteData}
+                                    layout="vertical"
+                                    margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+                                >
+                                    <CartesianGrid strokeDasharray="3 3" horizontal={false} strokeOpacity={0.3} />
                                     <XAxis type="number" hide />
                                     <YAxis
                                         dataKey="name"
                                         type="category"
-                                        stroke="hsl(var(--muted-foreground))"
-                                        fontSize={12}
-                                        tickLine={false}
+                                        width={160}
+                                        tick={{ fill: 'hsl(var(--foreground))', fontSize: 13, fontWeight: 500 }}
                                         axisLine={false}
-                                        width={120}
-                                        tick={{ textAnchor: 'start', x: 20 }}
+                                        tickLine={false}
                                     />
                                     <Tooltip
-                                        contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }}
                                         cursor={{ fill: 'hsl(var(--muted)/0.2)' }}
+                                        contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }}
                                     />
-                                    <Bar dataKey="value" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} barSize={20} />
+                                    <Bar dataKey="value" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} barSize={28} />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>
                     </CardContent>
                 </Card>
 
-                {/* Donut Chart */}
+                {/* Radar Chart - Visualizing Impact */}
                 <Card className="bg-muted/10 border-slate-300">
                     <CardHeader>
-                        <CardTitle>Impact We Deliver</CardTitle>
-                        <CardDescription>Driving efficiency across key areas</CardDescription>
+                        <CardTitle>The Indigen Impact</CardTitle>
+                        <CardDescription>Holistic improvement across key business metrics.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <div className="h-[300px] w-full">
+                        <div className="h-[350px] w-full">
                             <ResponsiveContainer width="100%" height="100%">
-                                <PieChart>
-                                    <Pie
-                                        data={impactData}
-                                        cx="50%"
-                                        cy="50%"
-                                        innerRadius={60}
-                                        outerRadius={100}
-                                        paddingAngle={5}
-                                        dataKey="value"
-                                    >
-                                        {impactData.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={entry.color} stroke="transparent" />
-                                        ))}
-                                    </Pie>
-                                    <Tooltip contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }} />
-                                    <Legend verticalAlign="bottom" height={36} iconType="circle" />
-                                </PieChart>
+                                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={impactData}>
+                                    <PolarGrid stroke="hsl(var(--muted-foreground)/0.2)" />
+                                    <PolarAngleAxis dataKey="subject" tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }} />
+                                    <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} axisLine={false} />
+                                    <Radar
+                                        name="Indigen Impact"
+                                        dataKey="A"
+                                        stroke="hsl(var(--primary))"
+                                        strokeWidth={3}
+                                        fill="hsl(var(--primary))"
+                                        fillOpacity={0.3}
+                                    />
+                                    <Tooltip
+                                        contentStyle={{ backgroundColor: 'hsl(var(--card))', borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }}
+                                    />
+                                </RadarChart>
                             </ResponsiveContainer>
                         </div>
                     </CardContent>

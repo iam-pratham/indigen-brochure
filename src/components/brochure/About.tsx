@@ -9,25 +9,25 @@ export default function About() {
                 {/* Main About Text */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-3xl font-bold tracking-tight">Next-Gen Tech Partner</h2>
+                        <h2 className="text-3xl font-bold tracking-tight">More Than Development. <br /> True Business Partners.</h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                             <p>
-                                Indigen Services is a technology company specializing in <span className="text-foreground font-semibold">Artificial Intelligence</span>, <span className="text-foreground font-semibold">SaaS Platforms</span>, <span className="text-foreground font-semibold">Automation Systems</span>, and <span className="text-foreground font-semibold">Full-Stack Development</span>.
+                                Indigen Services is a <span className="text-foreground font-semibold">Business & Technology Consultancy</span> first. We don't just execute code; we help you make the critical business decisions that define your digital future.
                             </p>
                             <p>
-                                We build intelligent digital products, scalable SaaS applications, and advanced automation systems that reduce manual work and accelerate growth.
+                                While we are experts in building <strong>Websites, Apps, and AI Systems</strong>, our core value lies in providing the ongoing support, strategic guidance, and technical intelligence your business needs to thrive.
                             </p>
                             <p className="border-l-4 border-primary pl-4 italic text-foreground text-lg">
-                                "Your long-term technology partner, not just a vendor."
+                                "We act as your extended technology department, guiding every business move."
                             </p>
                         </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         {[
-                            { icon: Brain, label: "AI & Automation" },
-                            { icon: Layers, label: "SaaS Platforms" },
+                            { icon: Brain, label: "Business Strategy" },
+                            { icon: Layers, label: "Tech Consulting" },
                             { icon: Cpu, label: "Digital Products" },
-                            { icon: Code, label: "Full Stack" },
+                            { icon: Code, label: "Support & Scale" },
                         ].map((item, i) => (
                             <Card key={i} className="bg-muted/50 border-none hover:bg-muted transition-colors">
                                 <CardContent className="flex flex-col items-center justify-center p-6 text-center gap-3">

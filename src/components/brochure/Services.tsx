@@ -10,39 +10,39 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 
 const services = [
     {
-        title: "AI Development",
+        title: "Business & Tech Consultancy",
+        icon: Search,
+        desc: "We analyze your business flow to provide strategic roadmaps and technology decision support.",
+        outcome: "Clear direction, risk reduction, valid investment."
+    },
+    {
+        title: "AI & Automation",
         icon: Bot,
-        desc: "Custom AI tools, workflow automation, AI assistants, smart integrations.",
-        outcome: "Reduce manual work, faster decisions, scalable automation."
+        desc: "Custom AI tools, intelligent workflows, and system automation to replace manual tasks.",
+        outcome: "Reduce manual work, faster decisions, scalable systems."
     },
     {
         title: "SaaS Development",
         icon: LayoutDashboard,
-        desc: "MVP to full-scale SaaS, dashboards, admin panels, subscription platforms.",
-        outcome: "Scalable systems built for growth."
+        desc: "Building scalable software products from MVP to full enterprise-grade platforms.",
+        outcome: "Scalable assets built for long-term growth."
     },
     {
-        title: "App Development",
+        title: "App & Web Development",
         icon: Smartphone,
-        desc: "iOS + Android apps, seamless UX, performance-first architectures.",
-        outcome: "Mobile products users love."
+        desc: "High-performance websites and mobile apps designed for user engagement and conversion.",
+        outcome: "Modern, fast, conversion-driven digital presence."
     },
     {
-        title: "Web Development",
+        title: "Dedicated Support",
         icon: Globe,
-        desc: "High-performance websites + web applications.",
-        outcome: "Modern, fast, conversion-driven platforms."
+        desc: "Ongoing technical partnership, maintenance, and iterative improvements.",
+        outcome: "Peace of mind and continuous evolution."
     },
     {
-        title: "SEO Services",
-        icon: Search,
-        desc: "Technical SEO, on-page, speed optimization, structured content.",
-        outcome: "Rank higher, drive qualified organic traffic."
-    },
-    {
-        title: "Custom Shopify Stores",
+        title: "Custom Commerce",
         icon: ShoppingBag,
-        desc: "High-converting ecommerce stores, modern UI, fast checkout journeys.",
+        desc: "Tailored e-commerce solutions that go beyond basic templates.",
         outcome: "More conversions + better customer experience."
     }
 ];
@@ -52,9 +52,9 @@ export default function Services() {
         <section className="py-20 px-8 md:px-12 bg-muted/20">
             <div className="max-w-7xl mx-auto space-y-12">
                 <div className="text-center space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-bold">What We Do</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold">Strategic Services & Execution</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Comprehensive technology solutions designed to scale with your business.
+                        A full spectrum of services—from initial consulting to final deployment and support.
                     </p>
                 </div>
 
