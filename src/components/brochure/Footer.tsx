@@ -10,12 +10,16 @@ export default function Footer() {
                 </h2>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="h-14 px-8 text-lg rounded-full animate-in fade-in zoom-in duration-500">
-                        Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                    <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full">
-                        Book a Free Consultation
-                    </Button>
+                    <a href="https://indigenservices.com">
+                        <Button size="lg" className="h-14 px-8 text-lg rounded-full animate-in fade-in zoom-in duration-500">
+                            Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
+                        </Button>
+                    </a>
+                    <a href="https://indigenservices.com">
+                        <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full">
+                            Book a Free Consultation
+                        </Button>
+                    </a>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 pt-8 border-t border-slate-300 text-muted-foreground">

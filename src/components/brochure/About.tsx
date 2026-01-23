@@ -42,10 +42,10 @@ export default function About() {
                 {/* Numbers Speak Strip */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-300">
                     {[
-                        { number: "589", label: "Website Projects", icon: Code },
-                        { number: "129", label: "Mobile Apps", icon: Smartphone },
-                        { number: "658", label: "Happy Clients", icon: Users },
-                        { number: "7", label: "Years Experience", icon: Calendar },
+                        { number: "324+", label: "Website Projects", icon: Code },
+                        { number: "129+", label: "Mobile Apps", icon: Smartphone },
+                        { number: "658+", label: "Happy Clients", icon: Users },
+                        { number: "7+", label: "Years Experience", icon: Calendar },
                     ].map((stat, i) => (
                         <div key={i} className="flex flex-col items-center justify-center text-center gap-1 group">
                             <div className="p-3 rounded-full bg-primary/10 text-primary mb-2 group-hover:scale-110 transition-transform">
